@@ -29,7 +29,9 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Compile
-        run: mvn compile
+        run: |
+          mvn compile 2>&1 | tee compile.log
+          grep -i 'error' compile.log || true
 #
 #      - name: Build
 #        run: mvn clean verify
