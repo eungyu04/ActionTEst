@@ -19,14 +19,28 @@
     </dependencies>
 
     <build>
+        <testSourceDirectory>test</testSourceDirectory>
         <plugins>
+            <!-- Java 컴파일러 설정 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.8</source>   <!-- 컴파일할 자바 버전 -->
+                    <target>1.8</target>   <!-- 출력될 자바 버전 -->
+                </configuration>
+            </plugin>
+
+            <!-- 테스트 플러그인 설정 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>  <!-- 테스트 파일 패턴 -->
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
