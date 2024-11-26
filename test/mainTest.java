@@ -17,7 +17,7 @@ class mainTest {
     }
     @Test
     void Test4() {
-        assertEquals(2, main.a);
+        assertEquals(1, main.a);
     }
 
 
