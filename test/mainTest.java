@@ -7,7 +7,7 @@ class mainTest {
     @DisplayName("aa")
     void Test1() {
         assertEquals(1, main.a);
-//        assertEquals(0, main.a);
+        assertEquals(0, main.a);
     }
 
 
