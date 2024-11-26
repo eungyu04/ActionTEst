@@ -11,6 +11,7 @@
 
 # IntelliJ IDEA 관련 파일
 .idea/
+*.xml
 *.iml
 *.ipr
 *.iws
