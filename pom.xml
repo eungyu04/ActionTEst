@@ -48,10 +48,10 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>src.java</goal>
+                            <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>main</mainClass> <!-- main 클래스 경로 수정 -->
+                            <mainClass>src.main</mainClass> <!-- main 클래스 경로 수정 -->
                         </configuration>
                     </execution>
                 </executions>
