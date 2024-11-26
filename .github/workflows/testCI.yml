@@ -26,6 +26,9 @@ jobs:
 
       - name: Run main() method
         run: mvn exec:java
+#
+#      - name: Build
+#        run: mvn clean install
 
   test:
     runs-on: ubuntu-latest
