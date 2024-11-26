@@ -24,8 +24,8 @@ jobs:
           maven-version: '3.8.1'
           distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Run main() method
+        run: mvn exec:java
 
   test:
     runs-on: ubuntu-latest
