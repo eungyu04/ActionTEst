@@ -1,4 +1,4 @@
-name: CI practice
+name: CI practice with Maven
 
 on:
   push:
@@ -20,12 +20,13 @@ jobs:
           java-version: 17
           distribution: 'temurin'
 
-      - name: Set up Maven
-        uses: actions/setup-java@v3
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
         with:
-          java-version: '17'
-          maven-version: '3.8.1'
-          distribution: 'temurin'
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
       - name: Compile
         run: mvn compile
@@ -44,17 +45,16 @@ jobs:
           java-version: 17
           distribution: 'temurin'
 
-      - name: Set up Maven
-        uses: actions/setup-java@v3
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
         with:
-          java-version: '17'
-          maven-version: '3.8.1'
-          distribution: 'temurin'
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
 
-#      - name: Run tests
-#        run: mvn test
-      - name: Build
-        run: mvn clean verify
+      - name: Skip Clean and Verify
+        run: mvn verify -Dmaven.clean.skip=true
 
       - name: 테스트 결과 Report
         uses: EnricoMi/publish-unit-test-result-action@v2
