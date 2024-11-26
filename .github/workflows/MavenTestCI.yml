@@ -53,8 +53,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Skip Clean and Verify
-        run: mvn verify -Dmaven.clean.skip=true
+      - name: Build
+        run: mvn verify -Dmaven.clean.skip=true # Skip Clean and Verify
 
       - name: 테스트 결과 Report
         uses: EnricoMi/publish-unit-test-result-action@v2
