@@ -4,11 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class mainTest {
 
     @Test
-    @DisplayName("aa")
     void Test1() {
         assertEquals(1, main.a);
-        assertEquals(0, main.a);
     }
+    @Test
+    void Test2() {
+        assertEquals(1, main.a);
+    }
+    @Test
+    void Test3() {
+        assertEquals(1, main.a);
+    }
+    @Test
+    void Test4() {
+        assertEquals(2, main.a);
+    }
+
 
 
 }
