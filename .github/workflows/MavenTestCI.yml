@@ -29,12 +29,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Compile
-        run: mvn compile || (echo "compile_fail" && exit 1) # 컴파일 실패시 메시지 출력 및 종료
-
-      - name: 컴파일 실패시 Report
-        if: failure()
-        run: |
-          echo "compile_fail"  # 이 부분에 컴파일 오류 리포트 내용 추가
+        run: mvn compile
 #
 #      - name: Build
 #        run: mvn clean verify
