@@ -28,7 +28,7 @@ jobs:
 #        run: mvn exec:java
 #
       - name: Build
-        run: mvn clean install
+        run: mvn clean verify
 
   test:
     runs-on: ubuntu-latest
