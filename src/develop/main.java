@@ -1,3 +1,5 @@
+package develop;
+
 public class main {
     static int a = 1;
 
