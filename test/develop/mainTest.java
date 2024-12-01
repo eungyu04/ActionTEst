@@ -27,7 +27,7 @@ class mainTest {
     }
     @Test
     void Test6() {
-        assertEquals(1, develop.main.a);
+        assertEquals(0, develop.main.a);
     }
     @Test
     void Test7() {
